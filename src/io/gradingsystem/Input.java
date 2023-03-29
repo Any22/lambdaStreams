@@ -1,13 +1,12 @@
-package io.gradingsystem;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Predicate;
 /**********************************************************************************************************************
  * A simple Student grading application which is displaying the Student's data , calculating percentages and count of
  * all students using lambda expressions .
  *********************************************************************************************************************/
+
+package io.gradingsystem;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
 public class Input {
     public static void main(String[] args) {
 
@@ -32,19 +31,22 @@ public class Input {
     }
         public static void  printResultSummary(List<Student> students , Predicate<Student> predicate){
         int count=0;
-        for(Student s:students) {
+            for(Student s:students) {
+
                 if (predicate.test(s)) {
-                    System.out.println("");
                     System.out.println(s);
-                    System.out.println("Percentage: " + s.getMarksObtained()*100/1000);
+                    float percentage = s.getMarksObtained()*100/1000 ;
+                    System.out.println("Percentage: " + percentage);
                     count++;
                 }
-
             }
-            System.out.println("\nTotal Students : "+ count);
-    }
 
-
-
+        System.out.println("\nTotal Students : "+ count);
+       }
 
 }
+
+
+
+
+
